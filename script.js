@@ -11,5 +11,5 @@ function calculateTotal() {
   ansDiv.textContent = total;
 }
 
-// Run on page load
-calculateTotal();
+// Attach event to button
+document.getElementById('calcBtn').addEventListener('click', calculateTotal);
