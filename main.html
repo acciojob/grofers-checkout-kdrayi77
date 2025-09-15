@@ -2,33 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grofers Checkout</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 300px;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+    .total-row {
+      font-weight: bold;
+      background: #f2f2f2;
+    }
+  </style>
 </head>
 <body>
+  <h2>Grofers Checkout</h2>
 
-  <h2>Grocery List</h2>
-  <table id="grocery-table">
+  <table id="groceryTable">
     <tr>
       <th>Item</th>
-      <th>Price (₹)</th>
+      <th>Price</th>
     </tr>
-    <tr class="item">
-      <td>Apples</td>
-      <td class="prices">120</td>
+    <tr>
+      <td class="item">Apples</td>
+      <td class="prices">50</td>
     </tr>
-    <tr class="item">
-      <td>Bananas</td>
+    <tr>
+      <td class="item">Bananas</td>
+      <td class="prices">30</td>
+    </tr>
+    <tr>
+      <td class="item">Milk</td>
       <td class="prices">60</td>
-    </tr>
-    <tr class="item">
-      <td>Milk</td>
-      <td class="prices">55</td>
     </tr>
   </table>
 
-  <button id="checkout">Calculate Total</button>
-
+  <!-- Link JS file -->
   <script src="script.js"></script>
 </body>
 </html>
