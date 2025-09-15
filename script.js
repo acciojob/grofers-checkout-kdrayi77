@@ -1,5 +1,5 @@
 function calculateTotal() {
-  const prices = document.querySelectorAll('.prices');
+  const prices = document.querySelectorAll('.price');
   let total = 0;
 
   prices.forEach(price => {
