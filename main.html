@@ -4,22 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grofers Checkout</title>
-  <style>
-    table {
-      border-collapse: collapse;
-      width: 300px;
-      margin-top: 20px;
-    }
-    th, td {
-      border: 1px solid black;
-      padding: 8px;
-      text-align: center;
-    }
-    .total-row {
-      font-weight: bold;
-      background: #f2f2f2;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h2>Grofers Checkout</h2>
@@ -41,13 +26,19 @@
       <td class="item">Milk</td>
       <td class="price">60</td>
     </tr>
+    <tr>
+      <td class="item">Rice</td>
+      <td class="price">120</td>
+    </tr>
+    <tr>
+      <td class="item">Wheat</td>
+      <td class="price">150</td>
+    </tr>
   </table>
 
-  <button id="checkoutBtn">Checkout</button>
-
+  <!-- Div where total will be shown -->
   <div id="ans"></div>
 
-  <!-- Link JS file -->
   <script src="script.js"></script>
 </body>
 </html>
