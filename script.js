@@ -1,28 +1,29 @@
-// Select all price elements
-const priceElements = document.querySelectorAll('.prices');
+document.getElementById('checkout').addEventListener('click', function () {
+  const priceElements = document.querySelectorAll('.prices');
+  let total = 0;
 
-// Calculate the total price
-let totalPrice = 0;
-priceElements.forEach(priceEl => {
-  const price = parseFloat(priceEl.textContent.trim());
-  if (!isNaN(price)) {
-    totalPrice += price;
+  priceElements.forEach(el => {
+    const value = parseFloat(el.textContent.trim());
+    if (!isNaN(value)) {
+      total += value;
+    }
+  });
+
+  // Remove existing total row if it exists
+  const existingTotalRow = document.getElementById('total-row');
+  if (existingTotalRow) {
+    existingTotalRow.remove();
   }
+
+  // Create new row
+  const totalRow = document.createElement('tr');
+  totalRow.id = 'total-row';
+  const totalCell = document.createElement('td');
+  totalCell.setAttribute('colspan', '2');
+  totalCell.textContent = `Total Price: ₹${total.toFixed(2)}`;
+  totalCell.style.fontWeight = 'bold';
+  totalCell.style.textAlign = 'right';
+
+  totalRow.appendChild(totalCell);
+  document.getElementById('grocery-table').appendChild(totalRow);
 });
-
-// Create a new row for the total
-const totalRow = document.createElement('tr');
-const totalCell = document.createElement('td');
-
-// Set the cell to span across all columns (adjust colspan if needed)
-totalCell.setAttribute('colspan', '2'); // assuming 2 columns: item and price
-totalCell.textContent = `Total Price: ₹${totalPrice.toFixed(2)}`;
-totalCell.style.fontWeight = 'bold';
-totalCell.style.textAlign = 'right';
-
-// Append the cell to the row
-totalRow.appendChild(totalCell);
-
-// Append the row to the table
-const table = document.querySelector('table');
-table.appendChild(totalRow);

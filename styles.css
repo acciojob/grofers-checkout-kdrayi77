@@ -1,2 +1,17 @@
+table {
+  width: 50%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
 
-/* Your CSS Code here. */
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+#checkout {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+}

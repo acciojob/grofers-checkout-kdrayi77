@@ -1,45 +1,34 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Grofers Checkout</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <!-- the entire body must be written by student -->
-    <table style="width: 100%">
-    <caption>
-      Monthly savings
-    </caption>
+
+  <h2>Grocery List</h2>
+  <table id="grocery-table">
     <tr>
       <th>Item</th>
-      <th>Prices in Rs</th>
+      <th>Price (₹)</th>
     </tr>
-    <tr>
-      <td class="item">Tea</td>
-      <td class="price">50</td>
+    <tr class="item">
+      <td>Apples</td>
+      <td class="prices">120</td>
     </tr>
-    <tr>
-      <td class="item">Coffee</td>
-      <td class="price">70</td>
+    <tr class="item">
+      <td>Bananas</td>
+      <td class="prices">60</td>
     </tr>
-    <tr>
-      <td class="item">Biscuits</td>
-      <td class="price">100</td>
-    </tr>
-    <tr>
-      <td class="item">Rice</td>
-      <td class="price">130</td>
-    </tr>
-    <tr>
-      <td class="item">Milk</td>
-      <td class="price">50</td>
+    <tr class="item">
+      <td>Milk</td>
+      <td class="prices">55</td>
     </tr>
   </table>
-    <script type="text/javascript" src="./script.js">
-</script>
 
+  <button id="checkout">Calculate Total</button>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
