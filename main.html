@@ -1,38 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
   <title>Grofers Checkout</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h2>Grofers Checkout</h2>
-
-  <table id="groceryTable">
-    <tr>
-      <th>Item</th>
-      <th>Price</th>
+  <h1>Grocery List</h1>
+  <table id="grocery-table">
+    <tr class="item">
+      <td>Apples</td>
+      <td class="prices">50</td>
     </tr>
-    <tr>
-      <td class="item">Apples</td>
-      <td class="price">100</td>
+    <tr class="item">
+      <td>Bananas</td>
+      <td class="prices">30</td>
     </tr>
-    <tr>
-      <td class="item">Bananas</td>
-      <td class="price">50</td>
-    </tr>
-    <tr>
-      <td class="item">Milk</td>
-      <td class="price">183</td>
+    <tr class="item">
+      <td>Milk</td>
+      <td class="prices">60</td>
     </tr>
   </table>
 
-  <!-- Button to calculate total -->
-  <button id="calcBtn">Calculate Total</button>
-
-  <!-- Div where total will be shown -->
-  <div id="ans"></div>
+  <button onclick="calculateTotal()">Calculate Total</button>
 
   <script src="script.js"></script>
 </body>

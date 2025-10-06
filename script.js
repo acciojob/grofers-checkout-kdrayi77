@@ -1,16 +1,32 @@
-const prices = document.querySelectorAll(".price");
-	let total = 0;
-	prices.forEach(priceCell => {
-	    total += parseFloat(priceCell.textContent);
-	});
+function calculateTotal() {
+  const priceCells = document.querySelectorAll('.prices');
+  let total = 0;
 
-	const table = document.querySelector("table");
-	const nR = document.createElement("tr");
-	const tC = document.createElement("td");
+  priceCells.forEach(cell => {
+    const value = parseFloat(cell.textContent);
+    if (!isNaN(value)) {
+      total += value;
+    }
+  });
 
-	tC.setAttribute("id", "ans"); 
-	tC.setAttribute("colspan", "2");
-	tC.textContent = Total Price: ${total};
+  const table = document.getElementById('grocery-table');
 
-	nR.appendChild(tC);
-	table.appendChild(nR);
+  // Remove existing total row if present
+  const existingTotalRow = document.getElementById('total-row');
+  if (existingTotalRow) {
+    table.removeChild(existingTotalRow);
+  }
+
+  // Create new total row
+  const totalRow = document.createElement('tr');
+  totalRow.id = 'total-row';
+
+  const totalCell = document.createElement('td');
+  totalCell.colSpan = 2;
+  totalCell.textContent = `Total Price: ₹${total}`;
+  totalCell.style.fontWeight = 'bold';
+  totalCell.style.textAlign = 'center';
+
+  totalRow.appendChild(totalCell);
+  table.appendChild(totalRow);
+}
