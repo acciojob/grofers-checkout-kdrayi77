@@ -1,20 +1,16 @@
-function calculateTotal() {
-  // Select prices fresh every time
-  const prices = document.querySelectorAll('.price');
-  let total = 0;
+const prices = document.querySelectorAll(".price");
+	let total = 0;
+	prices.forEach(priceCell => {
+	    total += parseFloat(priceCell.textContent);
+	});
 
-  prices.forEach(price => {
-    const value = parseFloat(price.textContent.trim());
-    if (!isNaN(value)) {
-      total += value;
-    }
-  });
+	const table = document.querySelector("table");
+	const nR = document.createElement("tr");
+	const tC = document.createElement("td");
 
-  // Display total inside #ans
-  const ansDiv = document.getElementById('ans');
-  ansDiv.textContent = ''; // clear previous
-  ansDiv.textContent = total;
-}
+	tC.setAttribute("id", "ans"); 
+	tC.setAttribute("colspan", "2");
+	tC.textContent = Total Price: ${total};
 
-// Attach event to button
-document.getElementById('calcBtn').addEventListener('click', calculateTotal);
+	nR.appendChild(tC);
+	table.appendChild(nR);
